@@ -1,0 +1,30 @@
+*/.classpath
+/.externalToolBuilders
+.project
+.settings
+*/.factorypath
+/target
+*.iml
+.idea/
+.vscode
+catalina.home_IS_UNDEFINED/
+*/target
+*/pom.xml.versionsBackup
+*/lib
+**/.terraform
+
+# Emacs/Vim
+\#*\#
+*~
+
+# GNU Global
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+**/.DS_STORE
+
+**/support/protobuf/
+
+.java-version
