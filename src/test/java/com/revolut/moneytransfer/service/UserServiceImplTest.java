@@ -3,18 +3,14 @@ package com.revolut.moneytransfer.service;
 import com.revolut.moneytransfer.dto.User;
 import com.revolut.moneytransfer.exception.ServiceException;
 import com.revolut.moneytransfer.repository.UserRepository;
-import com.revolut.moneytransfer.service.UserService;
 import com.revolut.moneytransfer.service.impl.UserServiceImpl;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.inject.Inject;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;

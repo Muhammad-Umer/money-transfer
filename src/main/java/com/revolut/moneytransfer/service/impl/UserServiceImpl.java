@@ -2,8 +2,8 @@ package com.revolut.moneytransfer.service.impl;
 
 import com.google.common.base.Enums;
 import com.neovisionaries.i18n.CountryCode;
-import com.revolut.moneytransfer.exception.ServiceException;
 import com.revolut.moneytransfer.dto.User;
+import com.revolut.moneytransfer.exception.ServiceException;
 import com.revolut.moneytransfer.repository.UserRepository;
 import com.revolut.moneytransfer.service.UserService;
 import com.revolut.moneytransfer.type.application.Currency;

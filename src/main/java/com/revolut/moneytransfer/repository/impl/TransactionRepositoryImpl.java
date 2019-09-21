@@ -1,8 +1,8 @@
 package com.revolut.moneytransfer.repository.impl;
 
 import com.revolut.moneytransfer.configurations.DatasourceConfiguration;
-import com.revolut.moneytransfer.exception.RepositoryException;
 import com.revolut.moneytransfer.dto.Transaction;
+import com.revolut.moneytransfer.exception.RepositoryException;
 import com.revolut.moneytransfer.repository.TransactionRepository;
 import com.revolut.moneytransfer.type.error.GenericErrorType;
 import com.revolut.moneytransfer.type.error.TransactionErrorType;

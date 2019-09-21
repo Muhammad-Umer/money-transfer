@@ -10,13 +10,16 @@ import com.revolut.moneytransfer.exception.RepositoryException;
 import com.revolut.moneytransfer.exception.ServiceException;
 import com.revolut.moneytransfer.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.jetty.http.HttpStatus;
 
 import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 
+import static org.eclipse.jetty.http.MimeTypes.Type.APPLICATION_JSON;
 import static spark.Spark.after;
 import static spark.Spark.before;
 import static spark.Spark.exception;
+import static spark.Spark.internalServerError;
 import static spark.Spark.notFound;
 import static spark.Spark.port;
 
@@ -25,18 +28,13 @@ public class Application {
 
     public static void main(String[] arg) throws Exception {
         initApplication();
-
-        before((req, res) -> res.type("application/json"));
-        after((request, response) -> response.type("application/json"));
-        notFound((req, res) -> {
-            res.type("application/json");
-            return "{\"message\":\"Custom 404\"}";
-        });
     }
-
 
     private static void initApplication() throws PropertyVetoException, SQLException {
         port(8080);
+        before((req, res) -> res.type(APPLICATION_JSON.asString()));
+        after((req, res) -> res.type(APPLICATION_JSON.asString()));
+
         setExceptionHandlers();
 
         AccountController accountController = new AccountController();
@@ -52,6 +50,22 @@ public class Application {
     }
 
     private static void setExceptionHandlers() {
+        notFound((request, response) -> {
+            response.status(HttpStatus.BAD_REQUEST_400);
+            return new Gson().toJson(
+                            new ErrorResponse(
+                                    "GE-400",
+                                    "The requested resource is not available"));
+        });
+
+        internalServerError((request, response) -> {
+            response.status(HttpStatus.INTERNAL_SERVER_ERROR_500);
+            return new Gson().toJson(
+                            new ErrorResponse(
+                                    "GE-500",
+                                    "Something went wrong"));
+        });
+
         exception(ServiceException.class, (exception, request, response) -> {
             response.status(exception.getHttpStatus());
             response.body(
