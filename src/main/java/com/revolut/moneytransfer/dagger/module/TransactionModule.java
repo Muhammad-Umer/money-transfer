@@ -33,8 +33,8 @@ public class TransactionModule {
         return new TransactionServiceImpl(
                 this.provideTransactionRepository(),
                 this.provideUserRepository(),
-                new ForexServiceImpl(),
-                this.provideAccountRepository()
+                this.provideAccountRepository(),
+                new ForexServiceImpl()
         );
     }
 }

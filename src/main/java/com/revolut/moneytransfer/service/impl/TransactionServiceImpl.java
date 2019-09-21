@@ -24,18 +24,18 @@ public class TransactionServiceImpl implements TransactionService {
 
     private final TransactionRepository transactionRepository;
     private final UserRepository userRepository;
-    private final ForexService forexService;
     private final AccountRepository accountRepository;
+    private final ForexService forexService;
 
     @Inject
     public TransactionServiceImpl(TransactionRepository transactionRepository,
                                   UserRepository userRepository,
-                                  ForexService forexService,
-                                  AccountRepository accountRepository) {
+                                  AccountRepository accountRepository,
+                                  ForexService forexService) {
         this.transactionRepository = transactionRepository;
         this.userRepository = userRepository;
-        this.forexService = forexService;
         this.accountRepository = accountRepository;
+        this.forexService = forexService;
     }
 
     @Override

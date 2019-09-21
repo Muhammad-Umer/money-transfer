@@ -17,19 +17,19 @@ public final class TransactionServiceImpl_Factory implements Factory<Transaction
 
   private final Provider<UserRepository> userRepositoryProvider;
 
-  private final Provider<ForexService> forexServiceProvider;
-
   private final Provider<AccountRepository> accountRepositoryProvider;
+
+  private final Provider<ForexService> forexServiceProvider;
 
   public TransactionServiceImpl_Factory(
       Provider<TransactionRepository> transactionRepositoryProvider,
       Provider<UserRepository> userRepositoryProvider,
-      Provider<ForexService> forexServiceProvider,
-      Provider<AccountRepository> accountRepositoryProvider) {
+      Provider<AccountRepository> accountRepositoryProvider,
+      Provider<ForexService> forexServiceProvider) {
     this.transactionRepositoryProvider = transactionRepositoryProvider;
     this.userRepositoryProvider = userRepositoryProvider;
-    this.forexServiceProvider = forexServiceProvider;
     this.accountRepositoryProvider = accountRepositoryProvider;
+    this.forexServiceProvider = forexServiceProvider;
   }
 
   @Override
@@ -37,40 +37,40 @@ public final class TransactionServiceImpl_Factory implements Factory<Transaction
     return provideInstance(
         transactionRepositoryProvider,
         userRepositoryProvider,
-        forexServiceProvider,
-        accountRepositoryProvider);
+        accountRepositoryProvider,
+        forexServiceProvider);
   }
 
   public static TransactionServiceImpl provideInstance(
       Provider<TransactionRepository> transactionRepositoryProvider,
       Provider<UserRepository> userRepositoryProvider,
-      Provider<ForexService> forexServiceProvider,
-      Provider<AccountRepository> accountRepositoryProvider) {
+      Provider<AccountRepository> accountRepositoryProvider,
+      Provider<ForexService> forexServiceProvider) {
     return new TransactionServiceImpl(
         transactionRepositoryProvider.get(),
         userRepositoryProvider.get(),
-        forexServiceProvider.get(),
-        accountRepositoryProvider.get());
+        accountRepositoryProvider.get(),
+        forexServiceProvider.get());
   }
 
   public static TransactionServiceImpl_Factory create(
       Provider<TransactionRepository> transactionRepositoryProvider,
       Provider<UserRepository> userRepositoryProvider,
-      Provider<ForexService> forexServiceProvider,
-      Provider<AccountRepository> accountRepositoryProvider) {
+      Provider<AccountRepository> accountRepositoryProvider,
+      Provider<ForexService> forexServiceProvider) {
     return new TransactionServiceImpl_Factory(
         transactionRepositoryProvider,
         userRepositoryProvider,
-        forexServiceProvider,
-        accountRepositoryProvider);
+        accountRepositoryProvider,
+        forexServiceProvider);
   }
 
   public static TransactionServiceImpl newTransactionServiceImpl(
       TransactionRepository transactionRepository,
       UserRepository userRepository,
-      ForexService forexService,
-      AccountRepository accountRepository) {
+      AccountRepository accountRepository,
+      ForexService forexService) {
     return new TransactionServiceImpl(
-        transactionRepository, userRepository, forexService, accountRepository);
+        transactionRepository, userRepository, accountRepository, forexService);
   }
 }
