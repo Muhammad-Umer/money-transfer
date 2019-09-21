@@ -1,5 +1,6 @@
 package com.revolut.moneytransfer.service.impl;
 
+import com.google.common.base.Enums;
 import com.neovisionaries.i18n.CountryCode;
 import com.revolut.moneytransfer.dto.Account;
 import com.revolut.moneytransfer.dto.Transaction;
@@ -145,15 +146,20 @@ public class AccountServiceImpl implements AccountService {
         CountryCode senderCountryCode = CountryCode.getByAlpha3Code(sender.getCountry());
         CountryCode receiverCountryCode = CountryCode.getByAlpha3Code(receiver.getCountry());
 
+        Currency senderCurrency =
+                Enums.getIfPresent(Currency.class, senderCountryCode.getCurrency().getCurrencyCode())
+                        .or(Currency.USD);
+
+        Currency recipientCurrency =
+                Enums.getIfPresent(Currency.class, receiverCountryCode.getCurrency().getCurrencyCode())
+                        .or(Currency.USD);
+
+
         BigDecimal dollarAmount = forexService
-                .convertCurrencyToDollars(
-                        Currency.valueOf(senderCountryCode.getCurrency().getCurrencyCode()),
-                        new BigDecimal(amount));
+                .convertCurrencyToDollars(senderCurrency, new BigDecimal(amount));
 
         BigDecimal localCurrencyAmount = forexService
-                .convertCurrencyToDollars(
-                        Currency.valueOf(receiverCountryCode.getCurrency().getCurrencyCode()),
-                        dollarAmount);
+                .convertCurrencyToDollars(recipientCurrency, dollarAmount);
 
         Transaction transaction = Transaction.builder()
                 .fromAccount(Integer.valueOf(senderId))

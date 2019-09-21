@@ -13,11 +13,17 @@ import com.google.gson.reflect.TypeToken;
 import com.revolut.moneytransfer.configurations.DatasourceConfiguration;
 import com.revolut.moneytransfer.dto.Account;
 import com.revolut.moneytransfer.dto.Transaction;
+import com.revolut.moneytransfer.dto.User;
 import com.revolut.moneytransfer.repository.AccountRepository;
+import com.revolut.moneytransfer.repository.TransactionRepository;
+import com.revolut.moneytransfer.repository.UserRepository;
 import com.revolut.moneytransfer.repository.impl.AccountRepositoryImpl;
+import com.revolut.moneytransfer.repository.impl.TransactionRepositoryImpl;
+import com.revolut.moneytransfer.repository.impl.UserRepositoryImpl;
 import com.revolut.moneytransfer.type.application.AccountType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import spark.servlet.SparkApplication;
 
@@ -34,12 +40,14 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 @Slf4j
-public class AccountControllerTest {
+public class ControllerTest {
     private static final String INIT_ERROR = "Server cannot be started: {}";
 
     private AccountRepository accountRepository = AccountRepositoryImpl.getInstance();
+    private UserRepository userRepository = UserRepositoryImpl.getInstance();
+    private TransactionRepository transactionRepository = TransactionRepositoryImpl.getInstance();
 
-    public static class AccountControllerTestApplication implements SparkApplication {
+    public static class ControllerTestApplication implements SparkApplication {
         @Override
         public void init() {
             try {
@@ -47,8 +55,15 @@ public class AccountControllerTest {
             } catch (SQLException | PropertyVetoException e) {
                 log.error(INIT_ERROR, e);
             }
+
             AccountController accountController = new AccountController();
             accountController.registerController();
+
+            UserController userController = new UserController();
+            userController.registerController();
+
+            TransactionController transactionController = new TransactionController();
+            transactionController.registerController();
         }
 
         @Override
@@ -58,8 +73,83 @@ public class AccountControllerTest {
     }
 
     @ClassRule
-    public static SparkServer<AccountControllerTestApplication> testServer =
-            new SparkServer<>(AccountControllerTest.AccountControllerTestApplication.class, 4567);
+    public static SparkServer<ControllerTestApplication> testServer =
+            new SparkServer<>(ControllerTestApplication.class, 2222);
+
+    @Test
+    public void testAddUser() throws HttpClientException {
+        User mockUser = getMockUser();
+        PutMethod put = testServer.
+                put("/user/", new Gson().toJson(mockUser), false);
+        HttpResponse httpResponse = testServer.execute(put);
+        User response = new Gson().fromJson(new String(httpResponse.body()), User.class);
+
+        assertEquals(response.getId(), Integer.valueOf(7));
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testUpdateUser() throws HttpClientException {
+        User mockUser = getMockUser();
+        PatchMethod patch = testServer.
+                patch("/user/", new Gson().toJson(mockUser), false);
+        HttpResponse httpResponse = testServer.execute(patch);
+        User response = new Gson().fromJson(new String(httpResponse.body()), User.class);
+
+        assertEquals(response.getFirstName(), mockUser.getFirstName());
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testDeleteUser() throws HttpClientException {
+        DeleteMethod delete = testServer.
+                delete("/user/id/1", false);
+        HttpResponse httpResponse = testServer.execute(delete);
+        boolean response = new Gson().fromJson(new String(httpResponse.body()), Boolean.class);
+
+        assertTrue(response);
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testGetAllUsers() throws HttpClientException {
+        List<User> userList = userRepository.getAll();
+        GetMethod get = testServer.get("/user/all", false);
+        HttpResponse httpResponse = testServer.execute(get);
+        List<User> response = new Gson().fromJson(new String(httpResponse.body()),
+                new TypeToken<List<User>>() {}.getType());
+
+        if (!response.isEmpty()) {
+            assertThat(response.get(0).getId(), is(userList.get(0).getId()));
+            assertThat(response.get(0).getFirstName(), is(userList.get(0).getFirstName()));
+            assertThat(response.get(0).getLastName(), is(userList.get(0).getLastName()));
+            assertThat(response.get(0).getEmail(), is(userList.get(0).getEmail()));
+            assertThat(response.get(0).getCountry(), is(userList.get(0).getCountry()));
+            assertThat(response.get(0).getCurrency(), is(userList.get(0).getCurrency()));
+        }
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testGetUserById() throws HttpClientException {
+        User user = userRepository.findById(1);
+        GetMethod get = testServer.get("/user/id/1", false);
+        HttpResponse httpResponse = testServer.execute(get);
+        User response = new Gson().fromJson(new String(httpResponse.body()), User.class);
+
+        assertThat(response.getId(), is(response.getId()));
+        assertThat(response.getFirstName(), is(user.getFirstName()));
+        assertThat(response.getLastName(), is(user.getLastName()));
+        assertThat(response.getEmail(), is(user.getEmail()));
+        assertThat(response.getCountry(), is(user.getCountry()));
+        assertThat(response.getCurrency(), is(user.getCurrency()));
+
+        assertNotNull(testServer.getApplication());
+    }
 
     @Test
     public void testGetAllAccounts() throws HttpClientException {
@@ -182,6 +272,8 @@ public class AccountControllerTest {
     @Test
     public void testDeposit() throws HttpClientException {
         Account mockAccount = getMockAccount();
+        mockAccount.setUserId(2);
+        mockAccount.setId(2);
         String path = "/account/deposit/" + mockAccount.getId() + "/amount/" + BigDecimal.TEN;
         PostMethod post = testServer.
                 post(path, "",false);
@@ -209,7 +301,7 @@ public class AccountControllerTest {
 
     @Test
     public void testTransfer() throws HttpClientException {
-        String path = "/account/transfer/sender/1/recipient/2/amount/10";
+        String path = "/account/transfer/sender/2/recipient/3/amount/10";
         PostMethod post = testServer.
                 post(path, "",false);
         HttpResponse httpResponse = testServer.execute(post);
@@ -218,6 +310,85 @@ public class AccountControllerTest {
         assertEquals(response.getAmount(), BigDecimal.TEN);
 
         assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testAddTransaction() throws HttpClientException {
+        Transaction mockTransaction = getMockTransaction();
+        mockTransaction.setFromAccount(3);
+        mockTransaction.setToAccount(4);
+        PutMethod put = testServer.
+                put("/transaction/", new Gson().toJson(mockTransaction), false);
+        HttpResponse httpResponse = testServer.execute(put);
+        Transaction response = new Gson().fromJson(new String(httpResponse.body()), Transaction.class);
+
+        assertEquals(response.getId(), Integer.valueOf(7));
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testGetTransactionById() throws HttpClientException {
+        Transaction transaction = transactionRepository.findById(1);
+        GetMethod get = testServer.get("/transaction/id/1", false);
+        HttpResponse httpResponse = testServer.execute(get);
+        Transaction response = new Gson().fromJson(new String(httpResponse.body()), Transaction.class);
+
+        assertThat(response.getId(), is(transaction.getId()));
+        assertThat(response.getFromAccount(), is(transaction.getFromAccount()));
+        assertThat(response.getToAccount(), is(transaction.getToAccount()));
+        assertThat(response.getAmount(), is(transaction.getAmount()));
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testGetDebitTransactionById() throws HttpClientException {
+        List<Transaction> transactionList = transactionRepository.getDebitTransactions(1);
+        GetMethod get = testServer.get("/transaction/debit/account/1", false);
+        HttpResponse httpResponse = testServer.execute(get);
+        List<Transaction> response = new Gson().fromJson(new String(httpResponse.body()),
+                new TypeToken<List<Transaction>>() {}.getType());
+
+        if (!response.isEmpty()) {
+            assertThat(response.get(0).getId(), is(transactionList.get(0).getId()));
+            assertThat(response.get(0).getFromAccount(), is(transactionList.get(0).getFromAccount()));
+            assertThat(response.get(0).getToAccount(), is(transactionList.get(0).getToAccount()));
+            assertThat(response.get(0).getAmount(), is(transactionList.get(0).getAmount()));
+        }
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
+    public void testGetCreditTransactionById() throws HttpClientException {
+        List<Transaction> transactionList = transactionRepository.getDebitTransactions(1);
+        GetMethod get = testServer.get("/transaction/credit/account/2", false);
+        HttpResponse httpResponse = testServer.execute(get);
+        List<Transaction> response = new Gson().fromJson(new String(httpResponse.body()),
+                new TypeToken<List<Transaction>>() {}.getType());
+
+        if (!response.isEmpty()) {
+            assertThat(response.get(0).getId(), is(transactionList.get(0).getId()));
+            assertThat(response.get(0).getFromAccount(), is(transactionList.get(0).getFromAccount()));
+            assertThat(response.get(0).getToAccount(), is(transactionList.get(0).getToAccount()));
+            assertThat(response.get(0).getAmount(), is(transactionList.get(0).getAmount()));
+        }
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    private User getMockUser() {
+        return User.builder()
+                .id(1)
+                .firstName("Nikola")
+                .lastName("Tesla")
+                .email("ntesla@yahoo.com")
+                .country("SRB")
+                .currency("DIN")
+                .creationDate(new Timestamp(1))
+                .updateDate(new Timestamp(1))
+                .build();
     }
 
     private Account getMockAccount() {
@@ -229,6 +400,16 @@ public class AccountControllerTest {
                 .open(true)
                 .creationDate(new Timestamp(1))
                 .updateDate(new Timestamp(1))
+                .build();
+    }
+
+    private Transaction getMockTransaction() {
+        return Transaction.builder()
+                .fromAccount(1)
+                .toAccount(1)
+                .amount(BigDecimal.TEN)
+                .creationDate(new Timestamp(System.currentTimeMillis()))
+                .updateDate(new Timestamp(System.currentTimeMillis()))
                 .build();
     }
 }
