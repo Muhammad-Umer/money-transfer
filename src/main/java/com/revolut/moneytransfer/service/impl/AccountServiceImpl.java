@@ -173,8 +173,14 @@ public class AccountServiceImpl implements AccountService {
         recipientAccount.setAccountBalance(recipientAccount.getAccountBalance().add(localCurrencyAmount));
 
         Transaction actualTransaction = transactionRepository.add(transaction);
-        update(senderAccount);
-        update(recipientAccount);
+
+        if (recipientAccount.getId() < senderAccount.getId()) {
+            update(recipientAccount);
+            update(senderAccount);
+        } else {
+            update(senderAccount);
+            update(recipientAccount);
+        }
 
         return actualTransaction;
     }

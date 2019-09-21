@@ -15,7 +15,6 @@ com/revolut/moneytransfer/dagger/module/AccountModule.class
 com/revolut/moneytransfer/dagger/component/AccountComponent.class
 com/revolut/moneytransfer/dagger/component/UserComponent.class
 com/revolut/moneytransfer/utils/DataFields$AccountFields.class
-com/revolut/moneytransfer/service/impl/TransactionServiceImpl_Factory.class
 com/revolut/moneytransfer/service/impl/AccountServiceImpl.class
 com/revolut/moneytransfer/dagger/component/DaggerTransactionComponent$Builder.class
 com/revolut/moneytransfer/dagger/component/DaggerUserComponent$Builder.class
@@ -29,7 +28,6 @@ com/revolut/moneytransfer/dagger/module/TransactionModule.class
 com/revolut/moneytransfer/service/impl/ForexServiceImpl$1.class
 com/revolut/moneytransfer/dto/Account$AccountBuilder.class
 com/revolut/moneytransfer/repository/AccountRepository.class
-com/revolut/moneytransfer/service/impl/AccountServiceImpl_Factory.class
 com/revolut/moneytransfer/dagger/component/DaggerUserComponent$1.class
 com/revolut/moneytransfer/repository/impl/AccountRepositoryImpl.class
 com/revolut/moneytransfer/dagger/component/DaggerAccountComponent$1.class
@@ -61,7 +59,6 @@ com/revolut/moneytransfer/Application.class
 com/revolut/moneytransfer/response/ErrorResponse.class
 com/revolut/moneytransfer/type/error/ErrorEnumType.class
 com/revolut/moneytransfer/utils/DataFields$UserFields.class
-com/revolut/moneytransfer/service/impl/UserServiceImpl_Factory.class
 com/revolut/moneytransfer/service/impl/ForexServiceImpl.class
 com/revolut/moneytransfer/repository/UserRepository.class
 com/revolut/moneytransfer/type/error/TransactionErrorType.class
