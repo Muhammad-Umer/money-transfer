@@ -166,6 +166,13 @@
             <version>${jupiter-version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.despegar</groupId>
+            <artifactId>spark-test</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+
     </dependencies>
 
 </project>

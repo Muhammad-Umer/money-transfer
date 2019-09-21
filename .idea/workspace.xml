@@ -29,73 +29,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/repository/impl/UserRepositoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="104" column="19" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/controller/TransactionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" column="52" lean-forward="true" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/dto/Transaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="219">
-                <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/controller/AccountControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2473#2474#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/application/AccountType.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/sql/insert.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="-71" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/dto/DtoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#395#432#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/application/Currency.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar!/org/hamcrest/MatcherAssert.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="120">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,17 +77,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/controller/AccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="290">
+              <caret line="63" column="54" lean-forward="true" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/dto/Account.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/AccountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="285">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/impl/AccountServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-217">
+              <caret line="117" column="23" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/UserServiceImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="18" column="41" selection-start-line="18" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/AccountServiceImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="401" column="29" lean-forward="true" selection-start-line="401" selection-start-column="29" selection-end-line="401" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,6 +144,8 @@
     <findStrings>
       <find>countryCode</find>
       <find>findbyId</find>
+      <find>Server has not been properly initialized</find>
+      <find>before</find>
     </findStrings>
     <replaceStrings>
       <replace>CURRENCY</replace>
@@ -147,8 +162,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/error/UserErrorType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/dagger/module/AccountModule.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/AccountServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/dagger/module/TransactionModule.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/TransactionServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/controller/AccountController.java" />
@@ -156,6 +169,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/repository/impl/UserRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/impl/TransactionServiceImpl.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/AccountServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/controller/AccountControllerTest.java" />
       </list>
     </option>
   </component>
@@ -321,6 +338,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="moneytransfer" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="money-transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="moneytransfer" type="462c0819:PsiDirectoryNode" />
               <item name="type" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -372,6 +398,15 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="moneytransfer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="money-transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="moneytransfer" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
@@ -443,34 +478,78 @@
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
+              <item name="Maven: com.despegar:spark-test:1.1.8" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.13-beta-3.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="Maven: com.despegar:spark-test:1.1.8" type="70bed36:NamedLibraryElementNode" />
+              <item name="spark-test-1.1.8.jar" type="b5f07198:RTreeStructureProvider$1" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.13-beta-3.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="Maven: com.despegar:spark-test:1.1.8" type="70bed36:NamedLibraryElementNode" />
+              <item name="spark-test-1.1.8.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.sparkjava:spark-core:2.8.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.sparkjava:spark-core:2.8.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="spark-core-2.8.0.jar" type="b5f07198:RTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.sparkjava:spark-core:2.8.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="spark-core-2.8.0.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="spark" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.sparkjava:spark-core:2.8.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="spark-core-2.8.0.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="spark" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-4.12.jar" type="b5f07198:RTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-4.12.jar" type="b5f07198:RTreeStructureProvider$1" />
               <item name="junit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.13-beta-3.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-4.12.jar" type="b5f07198:RTreeStructureProvider$1" />
               <item name="junit" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.13-beta-3.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-4.12.jar" type="b5f07198:RTreeStructureProvider$1" />
               <item name="junit" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
               <item name="runners" type="462c0819:PsiDirectoryNode" />
@@ -478,8 +557,8 @@
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.13-beta-3.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-4.12.jar" type="b5f07198:RTreeStructureProvider$1" />
               <item name="junit" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
               <item name="runners" type="462c0819:PsiDirectoryNode" />
@@ -488,73 +567,20 @@
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.13-beta-3" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.13-beta-3.jar" type="b5f07198:RTreeStructureProvider$1" />
-              <item name="junit" type="462c0819:PsiDirectoryNode" />
-              <item name="runners" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: org.hamcrest:hamcrest-all:1.3" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.eclipse.jetty:jetty-http:9.4.12.v20180830" type="70bed36:NamedLibraryElementNode" />
+              <item name="Maven: org.hamcrest:hamcrest-all:1.3" type="70bed36:NamedLibraryElementNode" />
+              <item name="hamcrest-all-1.3.jar" type="b5f07198:RTreeStructureProvider$1" />
             </path>
             <path>
               <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.eclipse.jetty:jetty-http:9.4.12.v20180830" type="70bed36:NamedLibraryElementNode" />
-              <item name="jetty-http-9.4.12.v20180830.jar" type="b5f07198:RTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.eclipse.jetty:jetty-http:9.4.12.v20180830" type="70bed36:NamedLibraryElementNode" />
-              <item name="jetty-http-9.4.12.v20180830.jar" type="b5f07198:RTreeStructureProvider$1" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.mockito:mockito-all:2.0.2-beta" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.mockito:mockito-all:2.0.2-beta" type="70bed36:NamedLibraryElementNode" />
-              <item name="mockito-all-2.0.2-beta.jar" type="b5f07198:RTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.mockito:mockito-all:2.0.2-beta" type="70bed36:NamedLibraryElementNode" />
-              <item name="mockito-all-2.0.2-beta.jar" type="b5f07198:RTreeStructureProvider$1" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.mockito:mockito-all:2.0.2-beta" type="70bed36:NamedLibraryElementNode" />
-              <item name="mockito-all-2.0.2-beta.jar" type="b5f07198:RTreeStructureProvider$1" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="mockito" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.mockito:mockito-all:2.0.2-beta" type="70bed36:NamedLibraryElementNode" />
-              <item name="mockito-all-2.0.2-beta.jar" type="b5f07198:RTreeStructureProvider$1" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="mockito" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="money-transfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.mockito:mockito-all:2.0.2-beta" type="70bed36:NamedLibraryElementNode" />
-              <item name="mockito-all-2.0.2-beta.jar" type="b5f07198:RTreeStructureProvider$1" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="mockito" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-              <item name="runners" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: org.hamcrest:hamcrest-all:1.3" type="70bed36:NamedLibraryElementNode" />
+              <item name="hamcrest-all-1.3.jar" type="b5f07198:RTreeStructureProvider$1" />
+              <item name="hamcrest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -563,7 +589,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569070316118" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569082748120" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -577,31 +603,66 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.Application" />
+  <component name="RunManager" selected="JUnit.All in money-transfer">
+    <configuration name="AccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="money-transfer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.revolut.moneytransfer.*" />
+          <option name="PATTERN" value="com.revolut.moneytransfer.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.controller.AccountControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountControllerTest.testDeposit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="money-transfer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.revolut.moneytransfer.service.*" />
+          <option name="PATTERN" value="com.revolut.moneytransfer.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.service" />
-      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.service.AccountServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.controller.AccountControllerTest" />
+      <option name="METHOD_NAME" value="testDeposit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountControllerTest.testTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="money-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.moneytransfer.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.controller.AccountControllerTest" />
+      <option name="METHOD_NAME" value="testTransfer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountControllerTest.testWithdraw" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="money-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.moneytransfer.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.controller.AccountControllerTest" />
+      <option name="METHOD_NAME" value="testWithdraw" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -614,44 +675,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="money-transfer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.revolut.moneytransfer.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.service" />
-      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.service.TransactionServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TransactionServiceImplTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="money-transfer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.revolut.moneytransfer.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.revolut.moneytransfer.service" />
-      <option name="MAIN_CLASS_NAME" value="com.revolut.moneytransfer.service.TransactionServiceImplTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.All in money-transfer" />
-        <item itemvalue="JUnit.TransactionServiceImplTest.test" />
-        <item itemvalue="JUnit.TransactionServiceImplTest" />
-        <item itemvalue="JUnit.AccountServiceImplTest" />
+        <item itemvalue="JUnit.AccountControllerTest" />
+        <item itemvalue="JUnit.AccountControllerTest.testTransfer" />
+        <item itemvalue="JUnit.AccountControllerTest.testWithdraw" />
+        <item itemvalue="JUnit.AccountControllerTest.testDeposit" />
       </list>
     </recent_temporary>
   </component>
@@ -677,42 +707,43 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TransactionServiceImplTest_testFindTransactionById - 2019.09.21 at 15h 11m 54s.xml">
-      <configuration name="TransactionServiceImplTest.testFindTransactionById" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testGetAccountByUserIdAndAccountType - 2019.09.21 at 20h 06m 24s.xml">
+      <configuration name="AccountControllerTest.testGetAccountByUserIdAndAccountType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest_testFindTransactionById - 2019.09.21 at 15h 12m 48s.xml">
-      <configuration name="TransactionServiceImplTest.testFindTransactionById" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testCloseAccount - 2019.09.21 at 20h 08m 16s.xml">
+      <configuration name="AccountControllerTest.testCloseAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest_testFindTransactionById - 2019.09.21 at 15h 15m 45s.xml">
-      <configuration name="TransactionServiceImplTest.testFindTransactionById" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testCloseAccount - 2019.09.21 at 20h 09m 22s.xml">
+      <configuration name="AccountControllerTest.testCloseAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AccountServiceImplTest - 2019.09.21 at 15h 16m 48s.xml">
-      <configuration name="AccountServiceImplTest" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testDeposit - 2019.09.21 at 20h 13m 21s.xml">
+      <configuration name="AccountControllerTest.testDeposit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest - 2019.09.21 at 15h 19m 24s.xml">
-      <configuration name="TransactionServiceImplTest" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testDeposit - 2019.09.21 at 20h 13m 35s.xml">
+      <configuration name="AccountControllerTest.testDeposit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest_test - 2019.09.21 at 15h 21m 16s.xml">
-      <configuration name="TransactionServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testDeposit - 2019.09.21 at 20h 13m 54s.xml">
+      <configuration name="AccountControllerTest.testDeposit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest_test - 2019.09.21 at 15h 23m 00s.xml">
-      <configuration name="TransactionServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testDeposit - 2019.09.21 at 20h 14m 06s.xml">
+      <configuration name="AccountControllerTest.testDeposit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest_test - 2019.09.21 at 15h 26m 32s.xml">
-      <configuration name="TransactionServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testWithdraw - 2019.09.21 at 20h 14m 54s.xml">
+      <configuration name="AccountControllerTest.testWithdraw" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TransactionServiceImplTest_test - 2019.09.21 at 15h 27m 06s.xml">
-      <configuration name="TransactionServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testTransfer - 2019.09.21 at 20h 16m 32s.xml">
+      <configuration name="AccountControllerTest.testTransfer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_money-transfer - 2019.09.21 at 15h 29m 47s.xml">
-      <configuration name="All in money-transfer" configurationId="JUnit" />
+    <history-entry file="AccountControllerTest_testTransfer - 2019.09.21 at 20h 17m 12s.xml">
+      <configuration name="AccountControllerTest.testTransfer" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11811000" />
+    <option name="totallyTimeSpent" value="17567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16422467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -723,12 +754,12 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3291536" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39916405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3291536" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="SonarLint" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
@@ -744,7 +775,7 @@
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="R Graphics" order="6" />
       <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven" order="8" sideWeight="0.49844238" weight="0.32967034" />
+      <window_info anchor="right" id="Maven" order="8" sideWeight="0.49844238" visible="true" weight="0.32967034" />
       <window_info anchor="right" id="SciView" order="9" />
       <window_info anchor="right" id="Palette&#9;" order="10" />
       <window_info anchor="right" id="Theme Preview" order="11" />
@@ -755,15 +786,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/impl/AccountServiceImpl.java</url>
-          <line>178</line>
+          <line>103</line>
           <properties />
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>response.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>CountryCode.getByAlpha3Code(&quot;TUR&quot;)</expression-string>
         <language-id>JAVA</language-id>
@@ -869,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/dto/DtoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="21" selection-start-line="14" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/error/AccountErrorType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -894,26 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/AccountServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/UserServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -980,20 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="133" column="75" selection-start-line="133" selection-start-column="75" selection-end-line="133" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -1064,27 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/application/Currency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/application/AccountType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/controller/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
@@ -1102,20 +1080,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/dto/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="219">
-            <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+          <first_editor relative-caret-position="103">
+            <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="170" column="32" lean-forward="true" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.8.0/spark-core-2.8.0.jar!/spark/Service.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="222" selection-start-line="222" selection-end-line="222" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/despegar/spark-test/1.1.8/spark-test-1.1.8.jar!/com/despegar/sparkjava/test/SparkServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.8.0/spark-core-2.8.0.jar!/spark/servlet/SparkApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/AccountServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="401" column="29" lean-forward="true" selection-start-line="401" selection-start-column="29" selection-end-line="401" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar!/org/hamcrest/MatcherAssert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/sql/create.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/dto/DtoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#395#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/service/UserServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="18" column="41" selection-start-line="18" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/sql/insert.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/dto/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/type/application/AccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="63" column="54" lean-forward="true" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/moneytransfer/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="117" column="23" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/revolut/moneytransfer/controller/AccountControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2473#2474#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
