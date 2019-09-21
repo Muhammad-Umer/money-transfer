@@ -90,12 +90,7 @@ public class UserRepositoryImpl implements UserRepository {
             int rowsAffected = preparedStatement.executeUpdate();
 
             if (rowsAffected == 1) {
-                try (ResultSet resultSet = preparedStatement.getGeneratedKeys()) {
-                    if (resultSet.next()) {
-                        int id = resultSet.getInt(1);
-                        return findById(id);
-                    }
-                }
+                return findById(user.getId());
             }
 
             throw new RepositoryException(UserErrorType.USER_NOT_UPDATED);

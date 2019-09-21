@@ -119,12 +119,12 @@ public class TransactionServiceImpl implements TransactionService {
             throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
         }
 
-        User sender = userRepository.findById(transaction.getFromAccount());
+        User sender = userRepository.findById(senderAccount.getUserId());
         if (sender.getId() == null) {
             throw new ServiceException(UserErrorType.INVALID_USER);
         }
 
-        User receiver = userRepository.findById(transaction.getToAccount());
+        User receiver = userRepository.findById(recipientAccount.getUserId());
         if (receiver.getId() == null) {
             throw new ServiceException(UserErrorType.INVALID_USER);
         }

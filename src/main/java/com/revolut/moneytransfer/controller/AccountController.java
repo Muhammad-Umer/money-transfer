@@ -64,14 +64,14 @@ public class AccountController {
                 return gson.toJson(accountService.transfer(senderId, recipientId, amount));
             });
 
-            post("/deposit/account/:id/amount/:amount",
+            post("/deposit/:id/amount/:amount",
                     (request, response) ->  {
                 String accountId = Objects.requireNonNull(request.params(":id"));
                 String amount = Objects.requireNonNull(request.params(":amount"));
                 return gson.toJson(accountService.deposit(accountId, amount));
             });
 
-            post("/withdraw/account/:id/amount/:amount",
+            post("/withdraw/:id/amount/:amount",
                     (request, response) ->  {
                 String accountId = Objects.requireNonNull(request.params(":id"));
                 String amount = Objects.requireNonNull(request.params(":amount"));

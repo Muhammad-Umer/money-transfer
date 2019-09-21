@@ -126,12 +126,12 @@ public class AccountServiceImpl implements AccountService {
             throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
         }
 
-        User sender = userRepository.findById(senderAccount.getId());
+        User sender = userRepository.findById(senderAccount.getUserId());
         if (sender.getId() == null) {
             throw new ServiceException(UserErrorType.INVALID_USER);
         }
 
-        User receiver = userRepository.findById(recipientAccount.getId());
+        User receiver = userRepository.findById(recipientAccount.getUserId());
         if (receiver.getId() == null) {
             throw new ServiceException(UserErrorType.INVALID_USER);
         }
@@ -189,7 +189,7 @@ public class AccountServiceImpl implements AccountService {
                 .updateDate(new Timestamp(System.currentTimeMillis()))
                 .build();
 
-        account.setAccountBalance(new BigDecimal(amount));
+        account.setAccountBalance(account.getAccountBalance().add(new BigDecimal(amount)));
 
         Transaction actualTransaction = transactionRepository.add(transaction);
         update(account);
