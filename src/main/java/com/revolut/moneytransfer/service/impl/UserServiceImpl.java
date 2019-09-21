@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     public User add(User user) {
         CountryCode countryCode = CountryCode.getByAlpha3Code(user.getCountry());
         if (countryCode == null) {
-            throw new ServiceException(UserErrorType.INVALID_USER_ID);
+            throw new ServiceException(UserErrorType.INVALID_COUNTRY);
         }
 
         Currency currency =
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
         CountryCode countryCode = CountryCode.getByAlpha3Code(user.getCountry());
         if (countryCode == null) {
-            throw new ServiceException(UserErrorType.INVALID_USER_ID);
+            throw new ServiceException(UserErrorType.INVALID_COUNTRY);
         }
 
         Currency currency =

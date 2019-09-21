@@ -7,6 +7,7 @@ import com.revolut.moneytransfer.repository.impl.AccountRepositoryImpl;
 import com.revolut.moneytransfer.repository.impl.TransactionRepositoryImpl;
 import com.revolut.moneytransfer.repository.impl.UserRepositoryImpl;
 import com.revolut.moneytransfer.service.impl.AccountServiceImpl;
+import com.revolut.moneytransfer.service.impl.ForexServiceImpl;
 import dagger.Module;
 import dagger.Provides;
 
@@ -33,7 +34,8 @@ public class AccountModule {
         return new AccountServiceImpl(
                 this.provideAccountRepository(),
                 this.provideUserRepository(),
-                this.provideTransactionRepository()
+                this.provideTransactionRepository(),
+                new ForexServiceImpl()
         );
     }
 }

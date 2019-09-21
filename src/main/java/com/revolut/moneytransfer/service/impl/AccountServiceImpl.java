@@ -1,5 +1,6 @@
 package com.revolut.moneytransfer.service.impl;
 
+import com.neovisionaries.i18n.CountryCode;
 import com.revolut.moneytransfer.dto.Account;
 import com.revolut.moneytransfer.dto.Transaction;
 import com.revolut.moneytransfer.dto.User;
@@ -8,7 +9,9 @@ import com.revolut.moneytransfer.repository.AccountRepository;
 import com.revolut.moneytransfer.repository.TransactionRepository;
 import com.revolut.moneytransfer.repository.UserRepository;
 import com.revolut.moneytransfer.service.AccountService;
+import com.revolut.moneytransfer.service.ForexService;
 import com.revolut.moneytransfer.type.application.AccountType;
+import com.revolut.moneytransfer.type.application.Currency;
 import com.revolut.moneytransfer.type.error.AccountErrorType;
 import com.revolut.moneytransfer.type.error.UserErrorType;
 
@@ -22,14 +25,17 @@ public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
     private final UserRepository userRepository;
     private final TransactionRepository transactionRepository;
+    private final ForexService forexService;
 
     @Inject
     public AccountServiceImpl(AccountRepository accountRepository,
                               UserRepository userRepository,
-                              TransactionRepository transactionRepository) {
+                              TransactionRepository transactionRepository,
+                              ForexService forexService) {
         this.accountRepository = accountRepository;
         this.userRepository = userRepository;
         this.transactionRepository = transactionRepository;
+        this.forexService = forexService;
     }
 
     @Override
@@ -120,6 +126,35 @@ public class AccountServiceImpl implements AccountService {
             throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
         }
 
+        User sender = userRepository.findById(senderAccount.getId());
+        if (sender.getId() == null) {
+            throw new ServiceException(UserErrorType.INVALID_USER);
+        }
+
+        User receiver = userRepository.findById(recipientAccount.getId());
+        if (receiver.getId() == null) {
+            throw new ServiceException(UserErrorType.INVALID_USER);
+        }
+
+        final BigDecimal remainingSenderBalance = senderAccount.getAccountBalance().subtract(new BigDecimal(amount));
+
+        if (remainingSenderBalance.compareTo(BigDecimal.ZERO) < 0) {
+            throw new ServiceException(AccountErrorType.INSUFFICIENT_BALANCE);
+        }
+
+        CountryCode senderCountryCode = CountryCode.getByAlpha3Code(sender.getCountry());
+        CountryCode receiverCountryCode = CountryCode.getByAlpha3Code(receiver.getCountry());
+
+        BigDecimal dollarAmount = forexService
+                .convertCurrencyToDollars(
+                        Currency.valueOf(senderCountryCode.getCurrency().getCurrencyCode()),
+                        new BigDecimal(amount));
+
+        BigDecimal localCurrencyAmount = forexService
+                .convertCurrencyToDollars(
+                        Currency.valueOf(receiverCountryCode.getCurrency().getCurrencyCode()),
+                        dollarAmount);
+
         Transaction transaction = Transaction.builder()
                 .fromAccount(Integer.valueOf(senderId))
                 .toAccount(Integer.valueOf(recipientId))
@@ -128,14 +163,8 @@ public class AccountServiceImpl implements AccountService {
                 .updateDate(new Timestamp(System.currentTimeMillis()))
                 .build();
 
-        final BigDecimal remainingSenderBalance = senderAccount.getAccountBalance().subtract(new BigDecimal(amount));
-
-        if (remainingSenderBalance.compareTo(BigDecimal.ZERO) < 0) {
-            throw new ServiceException(AccountErrorType.INSUFFICIENT_BALANCE);
-        }
-
         senderAccount.setAccountBalance(remainingSenderBalance);
-        recipientAccount.setAccountBalance(recipientAccount.getAccountBalance().add(new BigDecimal(amount)));
+        recipientAccount.setAccountBalance(recipientAccount.getAccountBalance().add(localCurrencyAmount));
 
         Transaction actualTransaction = transactionRepository.add(transaction);
         update(senderAccount);
@@ -148,7 +177,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Transaction deposit(String accountId, String amount) {
         Account account = findById(accountId);
-        if(account.getId() == null) {
+        if (account.getId() == null) {
             throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
         }
 
@@ -171,7 +200,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Transaction withdraw(String accountId, String amount) {
         Account account = findById(accountId);
-        if(account.getId() == null) {
+        if (account.getId() == null) {
             throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
         }
 

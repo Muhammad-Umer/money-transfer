@@ -1,6 +1,7 @@
 package com.revolut.moneytransfer.service;
 
 import com.revolut.moneytransfer.dto.Account;
+import com.revolut.moneytransfer.dto.Transaction;
 import com.revolut.moneytransfer.dto.User;
 import com.revolut.moneytransfer.exception.ServiceException;
 import com.revolut.moneytransfer.repository.AccountRepository;
@@ -27,6 +28,8 @@ import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -49,11 +52,14 @@ public class AccountServiceImplTest {
     @Mock
     private TransactionRepository transactionRepository;
 
+    @Mock
+    private ForexService forexService;
+
     private AccountService accountService;
 
     @Before
     public void setup() {
-        accountService = new AccountServiceImpl(accountRepository, userRepository, transactionRepository);
+        accountService = new AccountServiceImpl(accountRepository, userRepository, transactionRepository, forexService);
     }
 
     @Test
@@ -342,6 +348,43 @@ public class AccountServiceImplTest {
         assertTrue(thrown.getAppMessage().contains("Invalid account type"));
     }
 
+    @Test
+    @DisplayName("Test deposit in an account when id is null use-case")
+    public void testDepositInvalidIdException() {
+        Account mockAccount = getMockAccount();
+        mockAccount.setId(null);
+
+        when(accountRepository.findById(anyInt())).thenReturn(mockAccount);
+
+        ServiceException thrown =
+                assertThrows(ServiceException.class, () -> accountService
+                        .deposit("1", "10"));
+
+        assertTrue(thrown.getAppMessage().contains("Cannot find the account"));
+    }
+
+    @Test
+    @DisplayName("Test deposit in an account use-case")
+    public void testDeposit() {
+        Account mockAccount = getMockAccount();
+        User mockUser = getMockUser();
+        Transaction mockTransaction = getMockTransaction();
+
+        when(accountRepository.findById(anyInt())).thenReturn(mockAccount);
+        when(userRepository.findById(mockAccount.getUserId())).thenReturn(mockUser);
+        when(accountRepository.update(mockAccount)).thenReturn(mockAccount);
+        when(transactionRepository.add(any(Transaction.class))).thenReturn(mockTransaction);
+
+        Transaction actualTransaction = accountService.
+                deposit(mockAccount.getId().toString(), BigDecimal.ONE.toString());
+
+        assertEquals(actualTransaction.getId(), mockTransaction.getId());
+
+        verify(accountRepository, times(1))
+                .findById(anyInt());
+        verify(transactionRepository, times(1))
+                .add(any(Transaction.class));
+    }
 
     private Account getMockAccount() {
         return Account.builder()
@@ -361,10 +404,20 @@ public class AccountServiceImplTest {
                 .firstName("Nikola")
                 .lastName("Tesla")
                 .email("ntesla@yahoo.com")
-                .country("SER")
+                .country("SRB")
                 .currency("DIN")
                 .creationDate(new Timestamp(1))
                 .updateDate(new Timestamp(1))
+                .build();
+    }
+
+    private Transaction getMockTransaction() {
+        return Transaction.builder()
+                .fromAccount(1)
+                .toAccount(1)
+                .amount(BigDecimal.TEN)
+                .creationDate(new Timestamp(System.currentTimeMillis()))
+                .updateDate(new Timestamp(System.currentTimeMillis()))
                 .build();
     }
 }

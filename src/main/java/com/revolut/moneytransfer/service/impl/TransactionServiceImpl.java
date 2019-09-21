@@ -82,6 +82,7 @@ public class TransactionServiceImpl implements TransactionService {
                         dollarAmount);
 
         recipientAccount.setAccountBalance(recipientAccount.getAccountBalance().add(localCurrencyAmount));
+        senderAccount.setAccountBalance(senderAccount.getAccountBalance().subtract(transaction.getAmount()));
 
         transaction.setAmount(localCurrencyAmount);
         transaction.setCreationDate(new Timestamp(System.currentTimeMillis()));
@@ -89,6 +90,7 @@ public class TransactionServiceImpl implements TransactionService {
 
         Transaction actualTransaction = transactionRepository.add(transaction);
         accountRepository.update(recipientAccount);
+        accountRepository.update(senderAccount);
 
         return actualTransaction;
     }
@@ -141,12 +143,14 @@ public class TransactionServiceImpl implements TransactionService {
                         dollarAmount);
 
         recipientAccount.setAccountBalance(recipientAccount.getAccountBalance().add(localCurrencyAmount));
+        senderAccount.setAccountBalance(senderAccount.getAccountBalance().subtract(transaction.getAmount()));
 
         transaction.setAmount(localCurrencyAmount);
         transaction.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 
         Transaction actualTransaction = transactionRepository.update(transaction);
         accountRepository.update(recipientAccount);
+        accountRepository.update(senderAccount);
 
         return actualTransaction;
     }
@@ -168,10 +172,6 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public List<Transaction> getCreditTransactions(String accountId) {
-        if (accountId == null || accountId.equals("")) {
-            throw new ServiceException(AccountErrorType.INVALID_ACCOUNT_ID);
-        }
-
         Account account = accountRepository.findById(Integer.valueOf(accountId));
         if (account.getId() == null) {
             throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);

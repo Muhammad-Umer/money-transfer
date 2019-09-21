@@ -1,6 +1,5 @@
 package com.revolut.moneytransfer;
 
-
 import com.google.gson.Gson;
 import com.revolut.moneytransfer.configurations.DatasourceConfiguration;
 import com.revolut.moneytransfer.controller.AccountController;

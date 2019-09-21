@@ -4,6 +4,7 @@ import com.revolut.moneytransfer.dto.User;
 import com.revolut.moneytransfer.exception.ServiceException;
 import com.revolut.moneytransfer.repository.UserRepository;
 import com.revolut.moneytransfer.service.impl.UserServiceImpl;
+import com.revolut.moneytransfer.type.application.Currency;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -65,7 +66,57 @@ public class UserServiceImplTest {
                 hasProperty(CURRENCY, is(mockUser.getCurrency()))
         ));
 
+        assertEquals(actualUser.getCurrency(), Currency.USD.name());
+
         verify(userRepository, times(1)).add(mockUser);
+    }
+
+
+    @Test
+    @DisplayName("Test add Turkey user use-case")
+    public void testAddTurkeyUser() {
+        User mockUser = getMockUser();
+        mockUser.setCountry("TUR");
+        when(userRepository.add(any(User.class))).thenReturn(mockUser);
+        User actualUser = userService.add(mockUser);
+
+
+        assertThat(actualUser, allOf(
+                hasProperty(ID, is(mockUser.getId())),
+                hasProperty(FIRST_NAME, is(mockUser.getFirstName())),
+                hasProperty(LAST_NAME, is(mockUser.getLastName())),
+                hasProperty(EMAIL, is(mockUser.getEmail())),
+                hasProperty(COUNTRY, is(mockUser.getCountry())),
+                hasProperty(CURRENCY, is(mockUser.getCurrency()))
+        ));
+
+        verify(userRepository, times(1)).add(mockUser);
+    }
+
+    @Test
+    @DisplayName("Test add user when country is invalid use-case")
+    public void testAddUserInvalidCountryException() {
+        User mockUser = getMockUser();
+        mockUser.setCountry("GER");
+        when(userRepository.add(any(User.class))).thenReturn(mockUser);
+
+        ServiceException thrown =
+                assertThrows(ServiceException.class, () -> userService.add(mockUser));
+
+        assertTrue(thrown.getAppMessage().contains("The country provided is invalid"));
+    }
+
+    @Test
+    @DisplayName("Test update user when country is invalid use-case")
+    public void testUpdateUserInvalidCountryException() {
+        User mockUser = getMockUser();
+        mockUser.setCountry("GER");
+        when(userRepository.update(any(User.class))).thenReturn(mockUser);
+
+        ServiceException thrown =
+                assertThrows(ServiceException.class, () -> userService.update(mockUser));
+
+        assertTrue(thrown.getAppMessage().contains("The country provided is invalid"));
     }
 
     @Test
@@ -166,7 +217,7 @@ public class UserServiceImplTest {
                 .firstName("Nikola")
                 .lastName("Tesla")
                 .email("ntesla@yahoo.com")
-                .country("SER")
+                .country("SRB")
                 .currency("DIN")
                 .creationDate(new Timestamp(1))
                 .updateDate(new Timestamp(1))
