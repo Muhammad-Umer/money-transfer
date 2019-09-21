@@ -23,7 +23,6 @@ import com.revolut.moneytransfer.repository.impl.UserRepositoryImpl;
 import com.revolut.moneytransfer.type.application.AccountType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Test;
 import spark.servlet.SparkApplication;
 

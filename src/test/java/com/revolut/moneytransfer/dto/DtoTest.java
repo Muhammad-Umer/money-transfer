@@ -15,15 +15,27 @@ import static pl.pojo.tester.api.assertion.Assertions.assertPojoMethodsFor;
 @SuppressWarnings("UnstableApiUsage")
 public class DtoTest {
 
-    private static final String DIRECTORY = "com.revolut.moneytransfer.dto";
+    private static final String DTO = "com.revolut.moneytransfer.dto";
+    private static final String RESPONSE = "com.revolut.moneytransfer.response";
 
     @Test
     public void testControllerJsonDtos() throws IOException {
-        Set<ClassPath.ClassInfo> set = ClassPath.from(this.getClass().getClassLoader()).getTopLevelClasses(DIRECTORY);
+        Set<ClassPath.ClassInfo> set = ClassPath.from(this.getClass().getClassLoader()).getTopLevelClasses(DTO);
 
         for (ClassPath.ClassInfo classUnderTest : set) {
             assertPojoMethodsFor(classUnderTest.getName())
                     .testing(Method.GETTER, Method.SETTER)
+                    .testing(Method.CONSTRUCTOR)
+                    .areWellImplemented();
+        }
+    }
+
+    @Test
+    public void testControllerJsonResponse() throws IOException {
+        Set<ClassPath.ClassInfo> set = ClassPath.from(this.getClass().getClassLoader()).getTopLevelClasses(RESPONSE);
+
+        for (ClassPath.ClassInfo classUnderTest : set) {
+            assertPojoMethodsFor(classUnderTest.getName())
                     .testing(Method.CONSTRUCTOR)
                     .areWellImplemented();
         }

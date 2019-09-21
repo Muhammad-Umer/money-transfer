@@ -8,12 +8,10 @@ public enum AccountErrorType implements ErrorEnumType<AccountErrorType> {
 
     ACCOUNT_NOT_CREATED(1, HttpStatus.INTERNAL_SERVER_ERROR_500, "Account cannot be created successfully"),
     ACCOUNT_NOT_UPDATED(2, HttpStatus.INTERNAL_SERVER_ERROR_500, "Account cannot be updated successfully"),
-    ACCOUNT_NOT_DELETED(3, HttpStatus.INTERNAL_SERVER_ERROR_500, "Account cannot be deleted successfully"),
-    CANNOT_FIND_ACCOUNT(4, HttpStatus.INTERNAL_SERVER_ERROR_500, "Account could not be retrieved"),
-    CANNOT_FIND_ACCOUNT_LIST(5, HttpStatus.INTERNAL_SERVER_ERROR_500, "Account listing could not be retrieved successfully"),
-    INVALID_ACCOUNT(7, HttpStatus.INTERNAL_SERVER_ERROR_500, "Cannot find the account"),
-    INVALID_ACCOUNT_ID(7, HttpStatus.BAD_REQUEST_400, "Invalid account id"),
-    INVALID_ACCOUNT_TYPE(7, HttpStatus.BAD_REQUEST_400, "Invalid account type"),
+    CANNOT_FIND_ACCOUNT(3, HttpStatus.INTERNAL_SERVER_ERROR_500, "Account could not be retrieved"),
+    INVALID_ACCOUNT(4, HttpStatus.INTERNAL_SERVER_ERROR_500, "Cannot find the account"),
+    INVALID_ACCOUNT_ID(5, HttpStatus.BAD_REQUEST_400, "Invalid account id"),
+    INVALID_ACCOUNT_TYPE(6, HttpStatus.BAD_REQUEST_400, "Invalid account type"),
     INSUFFICIENT_BALANCE(7, HttpStatus.BAD_REQUEST_400, "The balance for this operation is insufficient. Please deposit some amount first");
 
     private final int code;

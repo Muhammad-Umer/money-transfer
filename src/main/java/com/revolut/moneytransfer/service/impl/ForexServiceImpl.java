@@ -20,9 +20,9 @@ public class ForexServiceImpl implements ForexService {
             case EUR:
                 return amount.multiply(BigDecimal.valueOf(1.10));
             case INR:
-                return amount.multiply(BigDecimal.valueOf(156.70));
-            case YEN:
                 return amount.multiply(BigDecimal.valueOf(0.014));
+            case YEN:
+                return amount.multiply(BigDecimal.valueOf(0.0092));
             case AED:
                 return amount.multiply(BigDecimal.valueOf(0.27));
             default:
