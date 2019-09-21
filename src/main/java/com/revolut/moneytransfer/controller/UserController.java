@@ -25,6 +25,7 @@ public class UserController {
 
     public void registerController() {
         before("/*", (q, a) -> log.info("Received api call"));
+
         path("/user", () -> {
             put("/", (request, response) ->  gson.toJson(userService
                     .add(gson.fromJson(request.body(), User.class))));

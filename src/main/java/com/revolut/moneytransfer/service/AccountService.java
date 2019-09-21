@@ -21,4 +21,8 @@ public interface AccountService {
     List<Account> getAll();
 
     Transaction transfer(String senderId, String recipientId, String amount);
+
+    Transaction deposit(String accountId, String amount);
+
+    Transaction withdraw(String accountId, String amount);
 }

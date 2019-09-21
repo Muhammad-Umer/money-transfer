@@ -143,4 +143,58 @@ public class AccountServiceImpl implements AccountService {
 
         return actualTransaction;
     }
+
+
+    @Override
+    public Transaction deposit(String accountId, String amount) {
+        Account account = findById(accountId);
+        if(account.getId() == null) {
+            throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
+        }
+
+        Transaction transaction = Transaction.builder()
+                .fromAccount(Integer.valueOf(accountId))
+                .toAccount(Integer.valueOf(accountId))
+                .amount(new BigDecimal(amount))
+                .creationDate(new Timestamp(System.currentTimeMillis()))
+                .updateDate(new Timestamp(System.currentTimeMillis()))
+                .build();
+
+        account.setAccountBalance(new BigDecimal(amount));
+
+        Transaction actualTransaction = transactionRepository.add(transaction);
+        update(account);
+
+        return actualTransaction;
+    }
+
+    @Override
+    public Transaction withdraw(String accountId, String amount) {
+        Account account = findById(accountId);
+        if(account.getId() == null) {
+            throw new ServiceException(AccountErrorType.INVALID_ACCOUNT);
+        }
+
+        Transaction transaction = Transaction.builder()
+                .fromAccount(Integer.valueOf(accountId))
+                .toAccount(Integer.valueOf(accountId))
+                .amount(new BigDecimal(amount).multiply(new BigDecimal(-1)))
+                .creationDate(new Timestamp(System.currentTimeMillis()))
+                .updateDate(new Timestamp(System.currentTimeMillis()))
+                .build();
+
+
+        final BigDecimal remainingSenderBalance = account.getAccountBalance().subtract(new BigDecimal(amount));
+
+        if (remainingSenderBalance.compareTo(BigDecimal.ZERO) < 0) {
+            throw new ServiceException(AccountErrorType.INSUFFICIENT_BALANCE);
+        }
+
+        account.setAccountBalance(remainingSenderBalance);
+
+        Transaction actualTransaction = transactionRepository.add(transaction);
+        update(account);
+
+        return actualTransaction;
+    }
 }

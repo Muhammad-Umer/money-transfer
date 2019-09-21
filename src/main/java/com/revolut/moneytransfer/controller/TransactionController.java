@@ -23,6 +23,7 @@ public class TransactionController {
 
     public void registerController() {
         before("/*", (q, a) -> log.info("Received api call"));
+
         path("/transaction", () -> {
             put("/", (request, response) ->  gson.toJson(transactionService
                     .add(gson.fromJson(request.body(), Transaction.class))));

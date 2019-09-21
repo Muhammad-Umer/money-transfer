@@ -14,6 +14,7 @@ import static spark.Spark.delete;
 import static spark.Spark.get;
 import static spark.Spark.patch;
 import static spark.Spark.path;
+import static spark.Spark.post;
 import static spark.Spark.put;
 
 @Slf4j
@@ -24,6 +25,7 @@ public class AccountController {
 
     public void registerController() {
         before("/*", (q, a) -> log.info("Received api call"));
+
         path("/account", () -> {
             put("/", (request, response) ->  gson.toJson(accountService
                     .add(gson.fromJson(request.body(), Account.class))));
@@ -54,12 +56,26 @@ public class AccountController {
 
             get("/all", (request, response) ->  gson.toJson(accountService.getAll()));
 
-            get("/transfer/sender/:senderId/recipient/:recipientId/amount/:amount",
+            post("/transfer/sender/:senderId/recipient/:recipientId/amount/:amount",
                     (request, response) ->  {
                 String senderId = Objects.requireNonNull(request.params(":senderId"));
                 String recipientId = Objects.requireNonNull(request.params(":recipientId"));
                 String amount = Objects.requireNonNull(request.params(":amount"));
                 return gson.toJson(accountService.transfer(senderId, recipientId, amount));
+            });
+
+            post("/deposit/account/:id/amount/:amount",
+                    (request, response) ->  {
+                String accountId = Objects.requireNonNull(request.params(":id"));
+                String amount = Objects.requireNonNull(request.params(":amount"));
+                return gson.toJson(accountService.deposit(accountId, amount));
+            });
+
+            post("/withdraw/account/:id/amount/:amount",
+                    (request, response) ->  {
+                String accountId = Objects.requireNonNull(request.params(":id"));
+                String amount = Objects.requireNonNull(request.params(":amount"));
+                return gson.toJson(accountService.withdraw(accountId, amount));
             });
         });
     }
