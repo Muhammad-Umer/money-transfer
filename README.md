@@ -34,11 +34,11 @@ change to `USD`
 ###### User APIs
 | API | Http Method | Usage |
 |:---:|:-----------:|:-----:|
-|localhost:8080/user/|PUT|Add a user|
-|localhost:8080/user/|PATCH|Update a user|
-|localhost:8080/user/id/:id|DELETE|Delete a user|
-|localhost:8080/user/id/:id|GET|Get a user by id|
-|localhost:8080/user/all|GET|Get all users|
+|/user/|PUT|Add a user|
+|/user/|PATCH|Update a user|
+|/user/id/:id|DELETE|Delete a user|
+|/user/id/:id|GET|Get a user by id|
+|/user/all|GET|Get all users|
 
 
 ### Account
@@ -60,16 +60,16 @@ as well which is updated on every transaction.
 ###### Account APIs
 | API | Http Method | Usage |
 |:---:|:-----------:|:-----:|
-|localhost:8080/account/|PUT|Add an account|
-|localhost:8080/account/|PATCH|Update an account|
-|localhost:8080/account/id/:id|DELETE|Close an account|
-|localhost:8080/account/id/:id|GET|Get an account by id|
-|localhost:8080/account/user/:userId|GET|Get an account by user id|
-|localhost:8080/account/user/:userId/accountType/:accountType|GET|Get an account by user id and account type|
-|localhost:8080/account/all|GET|Get all accounts|
-|localhost:8080/account/transfer/sender/:senderId/recipient/:recipientId/amount/:amount|POST|Transfer between accounts|
-|localhost:8080/account/deposit/:id/amount/:amount|POST|Deposit to an  account|
-|localhost:8080/account/withdraw/:id/amount/:amount|POST|Withdraw from an account|
+|/account/|PUT|Add an account|
+|/account/|PATCH|Update an account|
+|/account/id/:id|DELETE|Close an account|
+|/account/id/:id|GET|Get an account by id|
+|/account/user/:userId|GET|Get an account by user id|
+|/account/user/:userId/accountType/:accountType|GET|Get an account by user id and account type|
+|/account/all|GET|Get all accounts|
+|/account/transfer/sender/:senderId/recipient/:recipientId/amount/:amount|POST|Transfer between accounts|
+|/account/deposit/:id/amount/:amount|POST|Deposit to an  account|
+|/account/withdraw/:id/amount/:amount|POST|Withdraw from an account|
 
 ### Transaction
 Each interaction between the same accounts or different accounts is termed as `Transaction`. 
@@ -88,11 +88,26 @@ changed to the local currency of the recipient.
 6. Update Date
 ``` 
 
+###### Transaction APIs
+| API | Http Method | Usage |
+|:---:|:-----------:|:-----:|
+|/transaction/|PUT|Add a transaction|
+|/transaction/|PATCH|Update a transaction|
+|/transaction/id/:id|GET|Get a transaction by id|
+|/transaction/debit/account/:accountId|GET|Get all debit transactions of an account|
+|/transaction/credit/account/:accountId|GET|Get all credit transactions of an account|
+
 #### Supported Currencies
 `PKR, USD (default currency), GBP, EUR, INR, YEN, AED`
 
 #### Supported Account Types
 `CURRENT(1), SAVINGS(2)`
+
+## Other Details
+1) Port = 8080
+2) Content-Type = application/json
+3) Database = H2 (In-memory)
+4) Entry Point = Application.java
 
 
 ## Built With
