@@ -95,8 +95,14 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 
         Transaction actualTransaction = transactionRepository.add(transaction);
-        accountRepository.update(recipientAccount);
-        accountRepository.update(senderAccount);
+
+        if (recipientAccount.getId() < senderAccount.getId()) {
+            accountRepository.update(recipientAccount);
+            accountRepository.update(senderAccount);
+        } else {
+            accountRepository.update(senderAccount);
+            accountRepository.update(recipientAccount);
+        }
 
         return actualTransaction;
     }
@@ -160,8 +166,13 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 
         Transaction actualTransaction = transactionRepository.update(transaction);
-        accountRepository.update(recipientAccount);
-        accountRepository.update(senderAccount);
+        if (recipientAccount.getId() < senderAccount.getId()) {
+            accountRepository.update(recipientAccount);
+            accountRepository.update(senderAccount);
+        } else {
+            accountRepository.update(senderAccount);
+            accountRepository.update(recipientAccount);
+        }
 
         return actualTransaction;
     }
