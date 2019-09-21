@@ -28,5 +28,8 @@
         <module name="money-transfer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="money-transfer" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
