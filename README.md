@@ -33,7 +33,7 @@ change to `USD`
 
 ###### User APIs
 | API | Http Method | Usage |
-|:---:|:-----------:|:-----:|
+|---|:-----------:|:-----:|
 |/user/|PUT|Add a user|
 |/user/|PATCH|Update a user|
 |/user/id/:id|DELETE|Delete a user|
@@ -59,7 +59,7 @@ as well which is updated on every transaction.
 
 ###### Account APIs
 | API | Http Method | Usage |
-|:---:|:-----------:|:-----:|
+|---|:-----------:|:-----:|
 |/account/|PUT|Add an account|
 |/account/|PATCH|Update an account|
 |/account/id/:id|DELETE|Close an account|
@@ -90,7 +90,7 @@ changed to the local currency of the recipient.
 
 ###### Transaction APIs
 | API | Http Method | Usage |
-|:---:|:-----------:|:-----:|
+|---|:-----------:|:-----:|
 |/transaction/|PUT|Add a transaction|
 |/transaction/|PATCH|Update a transaction|
 |/transaction/id/:id|GET|Get a transaction by id|
