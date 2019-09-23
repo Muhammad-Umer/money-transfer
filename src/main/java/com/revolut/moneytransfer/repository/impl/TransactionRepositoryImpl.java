@@ -139,7 +139,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
         } catch (PropertyVetoException e) {
             throw new RepositoryException(e, TransactionErrorType.CANNOT_FIND_TRANSACTION);
         } finally {
-            transactionDatabaseLock.readLock().lock();
+            transactionDatabaseLock.readLock().unlock();
         }
     }
 

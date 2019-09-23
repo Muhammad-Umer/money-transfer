@@ -327,6 +327,22 @@ public class ControllerTest {
     }
 
     @Test
+    public void testUpdateTransaction() throws HttpClientException {
+        Transaction mockTransaction = transactionRepository.findById(1);
+        mockTransaction.setFromAccount(3);
+        mockTransaction.setToAccount(4);
+        PatchMethod patch = testServer.
+                patch("/transaction/", new Gson().toJson(mockTransaction), false);
+        HttpResponse httpResponse = testServer.execute(patch);
+        Transaction response = new Gson().fromJson(new String(httpResponse.body()), Transaction.class);
+
+        assertEquals(response.getId(), Integer.valueOf(1));
+        assertEquals(response.getFromAccount(), response.getFromAccount());
+
+        assertNotNull(testServer.getApplication());
+    }
+
+    @Test
     public void testGetTransactionById() throws HttpClientException {
         Transaction transaction = transactionRepository.findById(1);
         GetMethod get = testServer.get("/transaction/id/1", false);
@@ -361,8 +377,8 @@ public class ControllerTest {
 
     @Test
     public void testGetCreditTransactionById() throws HttpClientException {
-        List<Transaction> transactionList = transactionRepository.getDebitTransactions(1);
-        GetMethod get = testServer.get("/transaction/credit/account/2", false);
+        List<Transaction> transactionList = transactionRepository.getCreditTransactions(1);
+        GetMethod get = testServer.get("/transaction/credit/account/1", false);
         HttpResponse httpResponse = testServer.execute(get);
         List<Transaction> response = new Gson().fromJson(new String(httpResponse.body()),
                 new TypeToken<List<Transaction>>() {}.getType());
