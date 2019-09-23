@@ -62,5 +62,7 @@
     <orderEntry type="library" name="Maven: com.despegar:spark-test:1.1.8" level="project" />
     <orderEntry type="library" name="Maven: com.despegar:http-java-native-client:1.0.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

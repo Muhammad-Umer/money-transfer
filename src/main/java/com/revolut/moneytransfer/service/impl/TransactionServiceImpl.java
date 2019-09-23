@@ -166,6 +166,7 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 
         Transaction actualTransaction = transactionRepository.update(transaction);
+
         if (recipientAccount.getId() < senderAccount.getId()) {
             accountRepository.update(recipientAccount);
             accountRepository.update(senderAccount);
